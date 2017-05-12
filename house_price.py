@@ -19,3 +19,17 @@ plt.plot(house_size, house_price, "bx")  # bx = blue x
 plt.ylabel("Price")
 plt.xlabel("Size")
 plt.show()
+
+
+def normalize(array):
+    return (array - array.mean())/ array.std()
+
+
+num_train_samples = math.floor(num_house * 0.7)
+
+#define training data
+train_house_size = np.asarray(house_size[:num_train_samples])
+train_price = np.asanyarray(house_price[:num_train_samples])
+
+train_house_size_norm = normalize(train_house_size)
+train_price_norm = normalize(train_price)
