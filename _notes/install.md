@@ -1,5 +1,5 @@
 ## Create virtual env
-    $ virtualenv -p /usr/bin/python2.7 venv
+    $ virtualenv -p /usr/bin/python2.7 --system-site-packages venv
     $ . venv/bin/activate
 
 ## Install tensorflow
