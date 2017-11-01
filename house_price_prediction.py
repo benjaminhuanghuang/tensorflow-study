@@ -1,3 +1,15 @@
+'''
+    Implement House Price prediction
+    Steps:
+        Prepare data
+        Inference
+        Loss Calculation
+        Optimize
+    Tensors types:
+        Constant
+        Variable
+        PlaceHolder: used to pass data into graph
+'''
 import tensorflow as tf
 import numpy as np
 import math
@@ -18,14 +30,14 @@ house_price = house_size * 100.0 + np.random.randint(low =20000, high =70000, si
 plt.plot(house_size, house_price, "bx")  # bx = blue x
 plt.ylabel("Price")
 plt.xlabel("Size")
-plt.show()
+# plt.show()
 
 
 def normalize(array):
     return (array - array.mean())/ array.std()
 
-
-num_train_samples = math.floor(num_house * 0.7)
+# define number of training samples: 70%
+num_train_samples = int(math.floor(num_house * 0.7))
 
 #define training data
 train_house_size = np.asarray(house_size[:num_train_samples])
@@ -33,3 +45,14 @@ train_price = np.asanyarray(house_price[:num_train_samples])
 
 train_house_size_norm = normalize(train_house_size)
 train_price_norm = normalize(train_price)
+
+# define the test data
+test_house_size = np.asarray(house_size[:num_train_samples])
+test_price = np.asanyarray(house_price[:num_train_samples])
+
+test_house_size_norm = normalize(train_house_size)
+test_house_price_norm = normalize(train_price)
+
+# Setup the tensorflow placeholder that get undated as we descend down the gradient
+tf_house_size = tf.placeholder("float", name="house_size")
+tf
