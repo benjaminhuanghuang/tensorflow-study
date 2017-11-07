@@ -1,5 +1,5 @@
 '''
-Tensorflow in 5 minutes
+Tensorflow in 5 minutes -by Siraj Raval
 https://www.youtube.com/watch?v=2FmcHiLCwTU
 
 1. Download dataset
