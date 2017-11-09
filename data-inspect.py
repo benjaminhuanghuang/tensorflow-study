@@ -71,16 +71,18 @@ test = load('data/housenumber/test_32x32.mat')
 
 # Get samples and labels
 train_samples = train['X']
+print("Train samples shape:", train_samples.shape)
 train_labels = train['y']
 # distribution(train_labels, "Train Labels")    # before normalize
 
 test_samples = test['X']
+print("Test samples shape:", test_samples.shape)
 test_labels = test['y']
 # distribution(test_labels, "Test Labels")    # before normalize
 
 _train_samples, _train_labels = reformat(train_samples, train_labels)
 _test_samples, _test_labels = reformat(test_samples, test_labels)
-# _train_samples = normalize(_train_samples)
+_train_samples = normalize(_train_samples)
 # _test_samples = normalize(_test_samples)
-inspect(_train_samples, _train_labels, 1234)
+#inspect(_train_samples, _train_labels, 2)
 
