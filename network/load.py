@@ -1,19 +1,25 @@
 '''
-Homework of Udacity Deep Learning
-
 code https://github.com/CreatCodeBuild/deep-learning-capstone/blob/master/load.py
 Data: http://ufldl.stanford.edu/housenumbers/
-
-NNW : Weight & Activation Function
-
 '''
 from __future__ import print_function, division
 from scipy.io import loadmat as load
 import matplotlib.pyplot as plt
 import numpy as np
+import load
+
+train_samples, train_labels = load._train_samples, load._train_labels
+test_samples, test_labels = load._test_samples,  load._test_labels
+
+print('Training set', train_samples.shape, train_labels.shape)
+print('    Test set', test_samples.shape, test_labels.shape)
+
+num_labels = 10
+image_size = 32
+num_channels = 1
 
 def reformat(samples, labels):
-	# (height, width, channel, image count) -> (image count, height, width, channel)
+  	# (height, width, channel, image count) -> (image count, height, width, channel)
 	samples = np.transpose(samples, (3, 0, 1, 2)).astype(np.float32)
 
 	# labels -> one-hot encoding [1]->[0,1,0,0,0,0,0,0,0,0]
@@ -28,8 +34,8 @@ def reformat(samples, labels):
 		else:
 			one_hot[num] = 1.0
 		one_hot_labels.append(one_hot)
-	labels = np.array(one_hot_labels).astype(np.float32)
-	# linearly normalize the image value from 0 - 255 to -1.0 to 1.0
+		labels = np.array(one_hot_labels).astype(np.float32)
+		# linearly normalize the image value from 0 - 255 to -1.0 to 1.0
 	return samples, labels
 
 # to Gray-scale, RGB -> number
@@ -78,24 +84,16 @@ test = load('data/housenumber/test_32x32.mat')
 train_samples = train['X']
 print("Train samples shape:", train_samples.shape)
 train_labels = train['y']
-distribution(train_labels, "Train Labels")    # before normalize
+# distribution(train_labels, "Train Labels")    # before normalize
 
 test_samples = test['X']
 print("Test samples shape:", test_samples.shape)
 test_labels = test['y']
-distribution(test_labels, "Test Labels")    # before normalize
-
-# global configuration / hyper parameters
-num_labels = 10
-image_size = 32
-num_channels = 1
+# distribution(test_labels, "Test Labels")    # before normalize
 
 _train_samples, _train_labels = reformat(train_samples, train_labels)
 _test_samples, _test_labels = reformat(test_samples, test_labels)
-
 _train_samples = normalize(_train_samples)
-_test_samples = normalize(_test_samples)
+# _test_samples = normalize(_test_samples)
+#inspect(_train_samples, _train_labels, 2)
 
-
-# inspect(_train_samples, _train_labels, 1234)
-# distribution(_test_labels, "Test Labels")
