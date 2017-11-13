@@ -10,7 +10,7 @@ y_data = x_data * 0.2 + 0.3
 Weights = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
 biases = tf.Variable(tf.zeros([1]))  # a tensor with all elements set to zero.
 
-y = Weights * x_data + biases    # Task: Find Weights and biases
+y = Weights * x_data + biases    # Task: Find Weights and biases to match y_data
 
 loss = tf.reduce_mean(tf.square(y - y_data))
 optimizer = tf.train.GradientDescentOptimizer(0.5)  # learning rate is 0.5
