@@ -1,5 +1,5 @@
 '''
-TF Girls 修炼指南 2
+TF Girls
 https://www.youtube.com/watch?v=TrWqRMJZU8A
 '''
 # encoding: utf-8
