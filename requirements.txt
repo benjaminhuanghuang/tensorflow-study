@@ -1,3 +1,7 @@
+tensorflow
+matplotlib
+tensorflow
 numpy
+pandas
+sklearn
 scipy
-matplotlib==1.4.3
