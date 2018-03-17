@@ -3,3 +3,4 @@ venv3/
 .DS_Store
 logs/
 data/
+MNIST_data/
