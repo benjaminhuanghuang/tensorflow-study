@@ -62,8 +62,6 @@ with tf.Session() as sess:
     # [True, False, True...]
     acc = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-    print(sess.run(acc, feed_dict={
+    # around 0.92
+    print('Accuracy: ',sess.run(acc, feed_dict={
           x: mnist.test.images, y_true: mnist.test.labels}))
-
-
-# Set model weight
