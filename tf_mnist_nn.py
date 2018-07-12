@@ -1,11 +1,13 @@
 '''
-    Neural Network Model - Deep Learning with Neural Networks and TensorFlow
+    Neural Network Model - Deep Learning with Neural Networks and TensorFlow by Sentdex
     https://www.youtube.com/watch?v=BhpvH5DuVu8
 '''
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
 # Read data
+# 0 = [0,0,0,0,0,0,0,0,0,0]
+# 1 = [0,1,0,0,0,0,0,0,0,0]
 mnist = input_data.read_data_sets('MNIST_data/', one_hot=True)
 
 # Configation
