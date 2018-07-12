@@ -4,3 +4,5 @@ venv3/
 logs/
 data/
 MNIST_data/
+logs/
+graphs/
