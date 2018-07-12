@@ -4,9 +4,13 @@
   - TensorFlow - Getting Started
   - https://github.com/akanshajainn/Machine-Learning---Google-Developers
   - Building Machine Learning Systems with TensorFlow 
-  
+  - http://web.stanford.edu/class/cs20si/
+    - http://web.stanford.edu/class/cs20si/lectures/
+    - https://github.com/chiphuyen/stanford-tensorflow-tutorials
+
+
 ## Tensfor flow setup
-  I use a common TensorFLow env for all projects on my computer
+  Using a common TensorFLow env for all projects
 ```  
   $mkdir ~/tensorflow
   $ virtualenv --system-site-packages ~/tensorflow              # for Python 2.7
