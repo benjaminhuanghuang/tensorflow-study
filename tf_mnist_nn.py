@@ -1,6 +1,7 @@
 '''
     Neural Network Model - Deep Learning with Neural Networks and TensorFlow by Sentdex
     https://www.youtube.com/watch?v=BhpvH5DuVu8
+    Part3 and Part4
 '''
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
