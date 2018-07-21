@@ -27,7 +27,6 @@ biases_output = tf.Variable(tf.zeros([1, 1]))  # 1 row ,1 col, init value is 0
 
 prediciton = tf.nn.tanh(tf.matmul(l1, weights_output) + biases_output)
 
-
 #
 loss = tf.reduce_mean(tf.square(prediciton - y))
 
